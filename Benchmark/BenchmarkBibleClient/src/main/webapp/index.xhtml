@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3c//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1-transitional.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>Search Verses</title>
+</head>
+<body>
+	<ui:composition template="/layouts/commonLayout.xhtml">
+		<ui:define name="content">
+			<h:form>
+				Book:<h:inputText value="#{verse.book}" /><br />
+				Chapter:<h:inputText value="#{verse.chapterNum}" /><br />
+				Verse Number:<h:inputText value="#{verse.verseNum}" /><br />
+				
+				<h:commandButton action="#{formController.findVerse(verse)}" value="Find A Verse" />
+				<h:commandButton></h:commandButton>
+			</h:form>
+			<h:messages />
+		</ui:define>
+	</ui:composition>
+</body>
+</html>
