@@ -67,7 +67,7 @@ public class VersesDAO implements DatabaseInterface {
 	}
 
 	@Override
-	public Verse getFirstOccurence(String s) {
+	public Verse getFirstOccurrence(String s) {
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(URL, USER, PASS);
@@ -100,20 +100,21 @@ public class VersesDAO implements DatabaseInterface {
 	}
 
 	@Override
-	public int countWords (String s) {
+	public int countWords (String count) {
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			PreparedStatement stmt = conn.prepareStatement(COUNT, Statement.RETURN_GENERATED_KEYS);
-			stmt.setString(1, "%"+s+"%");
+			stmt.setString(1, "%" + count + "%");
 			
 			ResultSet rs = stmt.executeQuery();
 			
-			int count = 0;
+			int counter = 0;
 			while (rs.next()) {
-				count = rs.getInt("Occurences");
+				counter = rs.getInt("Occurences");
 			}
-			return count;
+			
+			return counter;
 		} catch (Exception e) {
 			return 0;
 		}

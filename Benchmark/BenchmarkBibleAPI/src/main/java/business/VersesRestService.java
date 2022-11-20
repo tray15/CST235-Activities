@@ -34,9 +34,9 @@ public class VersesRestService {
 	@GET
 	@Path("/getfirst/{word}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Verse getFirstOccurence(@PathParam("word") String s)  {
+	public Verse getFirstOccurrence(@PathParam("word") String word)  {
 		try {
-			return service.getFirstOccurence(s);
+			return service.getFirstOccurrence(word);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -44,11 +44,11 @@ public class VersesRestService {
 	}
 	
 	@GET
-	@Path("/getcount/{word}")
+	@Path("/getcount/{count}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public int getCount(@PathParam("word") String s) {
+	public int getCount(@PathParam("count") String count) {
 		try {
-			return service.countWords(s);
+			return service.countWords(count);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return 0;

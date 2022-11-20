@@ -7,7 +7,7 @@ import beans.Verse;
 public interface VersesBusinessInterface {
 	Verse getVerseById(int id);
 	List<Verse> getAllVerses();
-	Verse getFirstOccurence (String s);
+	Verse getFirstOccurrence (String s);
 	int countWords(String s);
 	Verse getVerse(Verse v);
 }

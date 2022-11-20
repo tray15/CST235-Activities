@@ -10,12 +10,25 @@
 	<ui:composition template="/layouts/commonLayout.xhtml">
 		<ui:define name="content">
 			<h:form>
-				Book:<h:inputText value="#{verse.book}" /><br />
-				Chapter:<h:inputText value="#{verse.chapterNum}" /><br />
-				Verse Number:<h:inputText value="#{verse.verseNum}" /><br />
-				
-				<h:commandButton action="#{formController.findVerse(verse)}" value="Find A Verse" />
-				<h:commandButton></h:commandButton>
+				<div>
+					<h3>Find a verse by entering the following:</h3>
+					Book:<h:inputText value="#{verse.book}" /><br />
+					Chapter:<h:inputText value="#{verse.chapterNum}" /><br />
+					Verse Number:<h:inputText value="#{verse.verseNum}" /><br />
+					
+					<h:commandButton action="#{formController.findVerse(verse)}" value="Find A Verse" /><br /><br /><br />
+				</div>
+				<div>
+					<h3>Find a verse by entering a word. The first occurrence will be shown.</h3>
+					Enter a word to search:
+					<h:inputText binding="#{input1}" /><br />
+					<h:commandButton action="#{formController.getFirstOccurrence(input1.value)}" value="Get First Occurrence" /><br /><br /><br />
+				</div>
+				<div>
+					<h3>Find the times this phrase occurs.</h3>
+					<h:inputText binding="#{input2}"></h:inputText><br />
+					<h:commandButton action="#{formController.getCount(input2.value)}" value="Get The Count" /><br />
+				</div>
 			</h:form>
 			<h:messages />
 		</ui:define>

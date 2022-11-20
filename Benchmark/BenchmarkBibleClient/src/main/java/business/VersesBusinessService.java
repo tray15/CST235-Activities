@@ -7,7 +7,7 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
 
 import beans.Verse;
-import data.VersesDAO;
+import data.DatabaseInterface;
 
 /** @author tanner ray
  *  business layer class to access data layer
@@ -19,16 +19,17 @@ import data.VersesDAO;
 public class VersesBusinessService implements VersesBusinessInterface {
 	
 	@EJB
-	VersesDAO service;
+	DatabaseInterface service;
 	
 	@Override
-	public Verse getFirstOccurence(String s) {
-		return service.getFirstOccurence(s);
+	public Verse getFirstOccurrence(String word) {
+		return service.getFirstOccurrence(word);
 	}
 
 	@Override
-	public int countWords(String s) {
-		return service.countWords(s);
+	public int countWords(String count) {
+		System.out.println(service.countWords(count));
+		return service.countWords(count);
 	}
 
 	@Override

@@ -11,8 +11,11 @@
 		<ui:define name="content">
 			<h:form>
 				<div>
-					The verse you found was: <br /><br />
-					<h:outputText value="#{verse.verseContent}"></h:outputText><br /><br /><br />
+					This was the first verse with the given parameters: <br /><br />
+					Book: <h:outputText value="#{verse.book}"></h:outputText><br />
+					Chapter: <h:outputText value="#{verse.chapterNum}"></h:outputText><br />
+					Verse Number: <h:outputText value="#{verse.verseNum}"></h:outputText><br />
+					Verse: <h:outputText value="#{verse.verseContent}"></h:outputText><br />
 					<h:button value="Go back" outcome="index.xhtml" />
 				</div>
 			</h:form>

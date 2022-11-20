@@ -6,7 +6,7 @@ import beans.Verse;
 
 @Local
 public interface DatabaseInterface {
-	Verse getFirstOccurence(String s);
+	Verse getFirstOccurrence(String s);
 	int countWords(String s);
 	Verse getVerse(String book, int chapter, int verseNum);
 }

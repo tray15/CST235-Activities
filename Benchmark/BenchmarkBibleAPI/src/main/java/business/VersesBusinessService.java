@@ -35,8 +35,8 @@ public class VersesBusinessService implements VersesBusinessInterface {
 	}
 
 	@Override
-	public Verse getFirstOccurence(String s) {
-		return service.getFirstOccurence(s);
+	public Verse getFirstOccurrence(String s) {
+		return service.getFirstOccurrence(s);
 	}
 
 	@Override
