@@ -40,7 +40,6 @@ public class VersesDAO implements DatabaseInterface {
 	@Override
 	public Verse getVerse(String book, int chapter, int verseNum) {
 		HttpURLConnection conn = null;
-		Verse v = new Verse();
 		try {
 			
 			//URL with parameters
@@ -63,9 +62,8 @@ public class VersesDAO implements DatabaseInterface {
 				
 				System.out.println("From the Web Client: " + jsonObj.get("verse"));
 				String content = jsonObj.get("verse").toString();
-				v.setVerseContent(content);
 				
-//				return new Verse(v);
+				return new Verse(book, chapter, verseNum, content);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -74,7 +72,7 @@ public class VersesDAO implements DatabaseInterface {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return new Verse(v);
+		return null;
 	}
 	
 }

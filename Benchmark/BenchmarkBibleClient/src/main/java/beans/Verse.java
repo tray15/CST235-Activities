@@ -27,13 +27,6 @@ public class Verse implements Serializable {
 		this.verseNum = verseNum;
 		this.verseContent = verseContent;
 	}
-	
-	public Verse(Verse v) {
-		this.book = v.getBook();
-		this.chapterNum = v.getChapterNum();
-		this.verseNum = v.getVerseNum();
-		this.verseContent = v.getVerseContent();
-	}
 
 	public String getBook() {
 		return book;

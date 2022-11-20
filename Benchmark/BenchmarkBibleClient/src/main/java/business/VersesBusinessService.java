@@ -32,16 +32,8 @@ public class VersesBusinessService implements VersesBusinessInterface {
 	}
 
 	@Override
-	public Verse getVerse(String book, int chapter, int verseNum) {
-		
-		Verse v = service.getVerse(book, chapter, verseNum);
-		
-		String verseContent = service.getVerse(book, chapter, verseNum).getVerseContent();
-		
-		v.setVerseContent(verseContent);
-		
-		return v;
+	public Verse getVerse(String book, int chapter, int verseNum) {		
+		return service.getVerse(book, chapter, verseNum);
 	}
-
 	
 }
